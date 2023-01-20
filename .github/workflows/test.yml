@@ -12,4 +12,5 @@ jobs:
     # 実行する内容
     steps:
       - run: ls -la
+      - run: ls
       - run: echo "Hello World!"
