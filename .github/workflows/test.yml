@@ -1,16 +1,17 @@
+name: "Hello World"
 
 
-
-
-
-
-runs-on: ubuntu-latest
-
-name: "top name : Hello World"
+# 動くきっかけ
 on: [push]
 
+# 動かす内容
 jobs:
-  name: "jobs name 1"
+  sample:
+    name: Hello World Job
+    # 実行環境
+    runs-on: ubuntu-latest
+    # 実行する内容
     steps:
-      - run: echo "Hello World! 1"
-
+      - run: ls -la /github
+      - run: ls
+      - run: echo "Hello World!"
