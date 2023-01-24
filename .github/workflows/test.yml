@@ -21,46 +21,6 @@
 
 
 
-## user名
-#${{ github.actor }} 
-#anbergon
-
-
-## triger name
-#${{ github.event_name }} 
-#push
- 
-## OS名
-#${{ running.os }}
-#linux
-
-
-## branch 
-# ${{ github.ref }}
-# refs/heads/branch name
-#
-# ${{ github.ref_name }}
-# branch_name
-
-
-## repository
-#${{ github.repository }}."
-#ambergon/testGitAction
-
-## 既存のワークフローの再利用
-# uses: actions/checkout@v3
-# uses: user/branch@tag or commit_num
-# {owner}/{repo}/.github/workflows/{filename}@{ref}パブリックとプライベートリポジトリの再利用可能ワークフローの 。
-# ./.github/workflows/{filename}は同じリポジトリ内の再利用可能なワークフローの場合。
-
-## git checkout
-#- name: Check out repository code
-#  uses: actions/checkout@v3
-
-#下記のコードはチェックアウトしないと中のファイルにアクセスできない。
-#- name: List files in the repository
-#  run: ls ${{ github.workspace }}
-
 
 # 横に表示される名前
 name: GitHub Actions Demo
@@ -82,7 +42,7 @@ jobs:
       - name: List files in the repository
         run: ls
       - run: ls ${{ github.workspace }}
-      - run: sh a.sh
+      - run: sh a.sh >> anko.md
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
 
