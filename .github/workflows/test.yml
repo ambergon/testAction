@@ -3,51 +3,36 @@
 
 
 
-#name: "first Hello World"
-##actionとして何が実行されているか
-##all workflows
-#run-name: "run_name set "
-#
-#on: [push]
-#
-#jobs:
-#  test:
-#    runs-on: ubuntu-latest
-#
-#    #workflow の中のどの作業か。
-#    name: Hello World Job
-#    steps:
-#      - run: echo "Hello World!"
+
+ 
 
 
 
 
-# 横に表示される名前
+
+
+
+
+
 name: GitHub Actions Demo
 
-#ambergon is testing out GitHub Actions
 #work flow名
 run-name: ${{ github.actor }} is testing out GitHub Actions 
 on: [push]
 jobs:
-  #job idか。
-  Explore-GitHub-Actions:
+  #job id
+  Your-Job-ID:
+    #use os
     runs-on: ubuntu-latest
     steps:
-      #実行ごとに表示される名前。
-      - name: List files in the repository
-        run: ls ${{ github.workspace }}
+      ##実行ごとに表示される名前。
+      #check out
       - name: Check out repository code
         uses: actions/checkout@v3
 
+      - run: ls
       - run: sh a.sh >> anko.md
-      - name: List files in the repository
-        run: ls
-      - run: ls ${{ github.workspace }}
       - run: cat anko.md
-
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-
-
+      - run: echo "${{ job.status }}"
 
 
