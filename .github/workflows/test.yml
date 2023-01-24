@@ -20,21 +20,63 @@
 #      - run: echo "Hello World!"
 
 
+
+## user名
+#${{ github.actor }} 
+#anbergon
+
+
+## triger name
+#${{ github.event_name }} 
+#push
+ 
+## OS名
+#${{ running.os }}
+#linux
+
+
+## branch 
+# ${{ github.ref }}
+# refs/heads/branch name
+#
+# ${{ github.ref_name }}
+# branch_name
+
+
+## repository
+#${{ github.repository }}."
+#ambergon/testGitAction
+
+## 既存のワークフローの再利用
+# uses: actions/checkout@v3
+# uses: user/branch@tag or commit_num
+# {owner}/{repo}/.github/workflows/{filename}@{ref}パブリックとプライベートリポジトリの再利用可能ワークフローの 。
+# ./.github/workflows/{filename}は同じリポジトリ内の再利用可能なワークフローの場合。
+
+
+
+
+# 横に表示される名前
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+
+#ambergon is testing out GitHub Actions
+#work flow名
+run-name: ${{ github.actor }} is testing out GitHub Actions 
 on: [push]
 jobs:
+  #job idか。
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      #実行ごとに表示される名前。
+      - name: List files in the repository
+        run: ls ${{ github.workspace }}
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
+        run: ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+
+
+
