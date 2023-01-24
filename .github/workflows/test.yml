@@ -10,7 +10,7 @@ name: "top name : Hello World"
 on: [push]
 
 jobs:
-  name: jobs name 1
+  name: "jobs name 1"
     steps:
       - run: echo "Hello World! 1"
 
