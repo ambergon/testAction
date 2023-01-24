@@ -1,17 +1,21 @@
 
 
-runs-on: ubuntu-latest
+
+
+
 name: "first Hello World"
+run-name: "run_name set "
 
-
-# 動くきっかけ
 on: [push]
 
-# 動かす内容
 jobs:
   test:
-    name: Hello World Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Hello World Job 1"
+      - run: echo "Hello World! 1"
+      - name: "Hello World Job 2"
+      - run: echo "Hello World! 2"
+
     # 実行環境
     # 実行する内容
-    steps:
-      - run: echo "Hello World!"
