@@ -6,7 +6,6 @@ on: [push]
 
 # 動かす内容
 jobs:
-  sample:
     name: Hello World Job
     # 実行環境
     runs-on: ubuntu-latest
