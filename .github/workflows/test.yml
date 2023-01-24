@@ -4,11 +4,6 @@
 
 
 
- 
-
-
-
-
 
 
 
@@ -32,5 +27,13 @@ jobs:
       - run: sh a.sh >> anko.md
       - run: cat anko.md
       - run: echo "${{ job.status }}"
+        #反映したいな。
+        #
+      - run:|
+        git config --global user.email "sc.soar@gmail.com"
+        git config --global user.name  "ambergon workflow"
+        git add ./anko.md
+        git commit -m "[add] anko.md"
+        git status
 
 
