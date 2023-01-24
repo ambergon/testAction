@@ -80,9 +80,9 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: List files in the repository
-        #run: ls ${{ github.workspace }}
         run: ls
-          #run: ls ${{ github.workspace }}
+      - run: ls ${{ github.workspace }}
+      - run: sh a.sh
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
 
