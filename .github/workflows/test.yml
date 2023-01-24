@@ -29,12 +29,12 @@ jobs:
       - run: echo "${{ job.status }}"
         #反映したいな。
         #
-      - name: check git
-      run: |
-        git config --global user.email "sc.soar@gmail.com"
-        git config --global user.name  "ambergon workflow"
-        git add ./anko.md
-        git commit -m "[add] anko.md"
-        git status
+        #- name: check git
+        #run: |
+        #  git config --global user.email "sc.soar@gmail.com"
+        #  git config --global user.name  "ambergon workflow"
+        #  git add ./anko.md
+        #  git commit -m "[add] anko.md"
+        #  git status
 
 
