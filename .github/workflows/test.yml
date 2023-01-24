@@ -6,11 +6,11 @@ on: [push]
 
 # 動かす内容
 jobs:
-    name: Hello World Job
+  name: Hello World Job
     # 実行環境
-    runs-on: ubuntu-latest
+  runs-on: ubuntu-latest
     # 実行する内容
-    steps:
-      - run: ls -la /github
-      - run: ls
-      - run: echo "Hello World!"
+  steps:
+    - run: ls -la /github
+    - run: ls
+    - run: echo "Hello World!"
