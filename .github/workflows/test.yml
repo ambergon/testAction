@@ -21,6 +21,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
+      # 同じステップ内でこけるとそこで止まるのか。
+      - run: echo "${{ secrets.GITHUB_TOKEN }}"
       - run: ls
       - run: sh a.sh >> anko.md
       - run: cat anko.md
@@ -32,7 +34,6 @@ jobs:
       - run: git push origin HEAD
       - run: git status
 
-      - run: echo "${{ secrets.GITHUB_TOKEN }}"
 
         #env:
         #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
