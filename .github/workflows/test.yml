@@ -31,7 +31,7 @@ jobs:
       - run: git add ./anko.md
       - run: git commit -m "[add] anko.md"
       - run: git push 
-        #- run: git status
+      - run: git status
 
 
         #env:
