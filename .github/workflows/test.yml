@@ -34,6 +34,7 @@ jobs:
       - run: git config --global user.name  "ambergon workflow"
       - run: git add ./anko.md
       - run: git commit -m "[add] anko.md"
+      - run: git push origin 
       - run: git status
 
 
