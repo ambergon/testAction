@@ -37,4 +37,8 @@ jobs:
       - run: git push origin HEAD
       - run: git status
 
+      - run: echo "${{ secrets.GITHUB_TOKEN }}"
+
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
