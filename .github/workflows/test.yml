@@ -20,6 +20,9 @@ jobs:
       - run: git config --global user.email "sc.soar@gmail.com"
       - run: git config --global user.name  "ambergon workflow"
       - run: git add ./log.md
+      - run: git fetch origin/test
+      - run: git diff  origin/test
+      - run: git merge origin/test
       - run: git commit -m "bot commit"
       - run: git push origin test
       - run: git status
