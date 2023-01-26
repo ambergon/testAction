@@ -4,10 +4,6 @@
 
 
 
-
-
-
-
 #work flow名
 run-name: ${{ github.actor }} is testing out GitHub Actions 
 on: [push]
@@ -20,11 +16,11 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
 
-      - run: sh a.sh >> anko.md
+      - run: sh do.sh >> log.md
       - run: git config --global user.email "sc.soar@gmail.com"
       - run: git config --global user.name  "ambergon workflow"
-      - run: git add ./anko.md
-      - run: git commit -m "[add] anko.md"
-      - run: git push 
+      - run: git add ./log.md
+      - run: git commit -m "bot commit"
+      - run: git push origin test
       - run: git status
 
