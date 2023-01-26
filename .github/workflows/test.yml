@@ -21,7 +21,8 @@ jobs:
         #- run: git diff  origin/test
         #- run: git merge origin/test
 
-      - run: git commit -m "bot commit"
-      - run: git push -f origin ${{ github.ref_name }} test
+      - run: git branch
+        #- run: git commit -m "bot commit"
+        #- run: git push -f origin ${{ github.ref_name }} test
       - run: git status
 
