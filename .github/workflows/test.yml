@@ -15,8 +15,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-        with: 
-          ref: test
+          #with: 
+          #  ref: test
 
         #- run: sh do.sh >> log.md
       - run: git config --global user.email "sc.soar@gmail.com"
