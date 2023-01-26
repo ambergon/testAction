@@ -17,16 +17,15 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-        #使用ブランチを指定できる。
         with: 
-          fetch-depth: 0
+          ref: test
 
         #- run: sh do.sh >> log.md
       - run: git config --global user.email "sc.soar@gmail.com"
       - run: git config --global user.name  "ambergon workflow"
         #- run: git add ./log.md
 
-        #- run: git fetch origin/master
+        - run: git fetch origin/master
         #- run: git diff  origin/test
         #- run: git merge origin/test
 
