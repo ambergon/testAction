@@ -2,7 +2,11 @@
 
 #work flow名
 run-name: ${{ github.actor }} is testing out GitHub Actions 
-on: [push]
+  #on: [push]
+on: 
+  push:
+    -  master
+
 jobs:
   #job name
   Your-Job-ID:
@@ -11,18 +15,20 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+        with: 
+          ref: test
 
-      - run: sh do.sh >> log.md
+        #- run: sh do.sh >> log.md
       - run: git config --global user.email "sc.soar@gmail.com"
       - run: git config --global user.name  "ambergon workflow"
-      - run: git add ./log.md
+        #- run: git add ./log.md
 
-        #- run: git fetch origin/test
+        #- run: git fetch origin/master
         #- run: git diff  origin/test
         #- run: git merge origin/test
 
       - run: git branch
-      - run: git commit -m "bot commit"
-      - run: git push -f origin ${{ github.ref_name }} test
-      - run: git status
+        #- run: git commit -m "bot commit"
+        #- run: git push -f origin ${{ github.ref_name }} test
+        #- run: git status
 
